@@ -17,8 +17,6 @@ def main():
 
     game_loop()
 
-    restart_game()
-
 def intro():
     clear_screen()
     """
@@ -26,7 +24,6 @@ def intro():
     """
     print("-"*50, "MAGIC NUMBER", "-"*50)
     print(f"Wellcome {PLAYER_NAME}!")
-    print(f"I have a number between {MIN} and {MAX}. Can you guess it?")
     time.sleep(4)
 
 def get_player_name():
@@ -38,6 +35,7 @@ def game_loop():
     The main game where we ask the player
     """
     clear_screen()
+    print(f"I have a number between {MIN} and {MAX}. Can you guess it?")
 
     magic_number = 5
     max_tries = 3
@@ -76,21 +74,22 @@ def check_result(magic_number, player_guess):
         print(f"My number was {magic_number}.")
         CREDITS -= REWARD
         print(f"You lost {REWARD} credits. You have {CREDITS} left.")
+    
+    restart_game()
 
 def restart_game():
     """
     Ask player if he/she wants to continue the game.
     """
-    clear_screen()
-
-    if CREDITS >= 0:
+    if CREDITS < 0:
+        exit_game()
+    else:
         player_response = input("Do you want to try again? (y/n)").lower()
         if player_response == "y":
             game_loop()
         else:
             exit_game()
-    else:
-        exit_game()
+        
 
 def exit_game():
     """
