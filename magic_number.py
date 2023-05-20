@@ -1,4 +1,4 @@
-import os, platform
+import os, platform, time
 
 MIN = 1
 MAX = 10
@@ -20,13 +20,14 @@ def main():
     restart_game()
 
 def intro():
-    clear_sceen()
+    clear_screen()
     """
     Prints the game title and its rules
     """
     print("-"*50, "MAGIC NUMBER", "-"*50)
     print(f"Wellcome {PLAYER_NAME}!")
     print(f"I have a number between {MIN} and {MAX}. Can you guess it?")
+    time.sleep(4)
 
 def get_player_name():
     global PLAYER_NAME
@@ -97,5 +98,6 @@ def exit_game():
     """
     print("Maybe next time :)")
     exit()
+
 
 main()
