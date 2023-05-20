@@ -89,7 +89,6 @@ def restart_game():
             game_loop()
         else:
             exit_game()
-        
 
 def exit_game():
     """
