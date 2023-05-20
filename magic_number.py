@@ -1,3 +1,12 @@
+MIN = 1
+MAX = 10
+REWARD = 10
+
+# PLAYER DATA
+CREDITS = 10
+PLAYER_NAME = None
+
+
 def main():
     pass
 
@@ -33,3 +42,6 @@ def exit_game():
     Exit game
     """
     pass
+
+
+main()
