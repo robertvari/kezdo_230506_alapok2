@@ -1,4 +1,5 @@
-from my_functions import math_functions
+from my_functions.math_functions import add_numbers, multiply_numbers, divide_numbers
+from settings import *
 
-result = math_functions.add_numbers(10, 4)
-print(result)
+result = add_numbers(10, 4)
+print(SERVER_ADDRES, USERNAME, PASSWORD)
