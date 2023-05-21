@@ -20,7 +20,7 @@ def get_all_files(root_folder: str, files: list, file_ext=None, name_filter=None
         found_files_with_ext = []
         for i in found_files:
             file_path, ext = os.path.splitext(i)
-            if ext == file_ext:
+            if ext.lower() == file_ext.lower():
                 found_files_with_ext.append(i)
         
         found_files = found_files_with_ext
@@ -41,9 +41,9 @@ def get_all_files(root_folder: str, files: list, file_ext=None, name_filter=None
         get_all_files(folder, files, file_ext, name_filter)
 
 
-root_folder = r"D:\Work\_PythonSuli\kezdo_230506\my_photos"
+root_folder = r"D:\Work\_PythonSuli\kezdo_230506\photos"
 files = []
-get_all_files(root_folder, files, name_filter="text document")
+get_all_files(root_folder, files, file_ext=".jpg")
 
 for i in files:
     print(i)
