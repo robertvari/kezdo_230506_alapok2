@@ -6,8 +6,9 @@ def main(root_folder, text, font_size=40):
     files = []
     get_all_files(root_folder, files, file_ext=".jpg")
     
-    new_image = process_image(files[0], text, font_size)
-    save_image(new_image, files[0])
+    for image in files:
+        new_image = process_image(image, text, font_size)
+        save_image(new_image, image)
 
 def save_image(new_image, filename):
     root_folder = os.path.dirname(filename)
@@ -20,7 +21,6 @@ def save_image(new_image, filename):
     new_file_name = os.path.join(save_dir, base_name)
     new_image.save(new_file_name)
 
-    
 
 def process_image(image_file, text, font_size):
     photo = image_file
