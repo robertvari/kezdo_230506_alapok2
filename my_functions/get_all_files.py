@@ -39,11 +39,3 @@ def get_all_files(root_folder: str, files: list, file_ext=None, name_filter=None
 
     for folder in subfolders:
         get_all_files(folder, files, file_ext, name_filter)
-
-
-root_folder = r"D:\Work\_PythonSuli\kezdo_230506\photos"
-files = []
-get_all_files(root_folder, files, file_ext=".jpg")
-
-for i in files:
-    print(i)
